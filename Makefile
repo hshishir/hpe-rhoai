@@ -4,12 +4,6 @@ SHELL=/bin/sh
 .PHONY: fullsetup
 
 fullsetup:
-	@echo "Setting up the cluster..."
-	./scripts/setup.sh -a
-
-.PHONY: model-serving-demo
-
-model-serving-demo-setup:
 	@echo "Setup..."
 	until oc apply -k 01-gpu-operators; do : ; done
 	until oc apply -k 02-gpu-dashboard; do : ; done
